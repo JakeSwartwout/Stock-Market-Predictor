@@ -7,8 +7,10 @@ To generate the buy/sell data, I looked 70 days into the future, in growing chun
 
 After that, I smoothed these values a little, so they ranged from 0 to 1, with approximately a uniform distribution. This could then be graphed  and makes a really pretty graph of choices.
 
-I then prepped my data (both in limiting x, and in scaling the y) and my tensorflow model. I used a convolutional nerual net with 3 convolutions (all with kernels of 9, one with 10 filters, 20, and 30), three layer of 20 neurons, and then the 2 neurons for the output layer.
+I then prepped my data (both in limiting x, and in scaling the y) and my tensorflow model. I used a convolutional nerual net with 3 convolutions (all with kernels of 9, one with 10 filters, 20, and 30), three layer of 20 neurons, and then the 2 neurons for the output layer. I trained it for 15 epochs on 11,337 business days each.
 
 The results were dissapointing though. The model didn't make any predictions, instead opting to leave both buy and sell likelihoods at 0. I'm guessing that this is because the stock market is too random (well, actually is more reliant on other factors than previous price points), so it is difficult for the model to actually find any patterns. Anything it learned for one was likely unlearned for the next value. 
 
-But, I still had a great time making it and learned a lot in the process
+But, I still had a great time making it and learned a lot in the process.
+
+As a note, the notebook is viewable in github (albeit with some weird bugs). But, if you would like to download and modify it for yourself, feel free, you just need to have some form of jupyter notebook in order to be able to read the .ipynb file. I use Anaconda on my laptop, but there are certainly online viewers available as well.
